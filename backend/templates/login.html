@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="container login-container">
+    <h2>Entrar no Sistema</h2>
+    <form id="form-login">
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required>
+
+        <label for="senha">Senha:</label>
+        <input type="password" name="senha" id="senha" required>
+
+        <button type="submit">Entrar</button>
+
+        <p class="text-sm text-center mt-4">
+          Ainda não tem conta?
+          <a href="/registrar" class="text-blue-600 hover:underline">Registrar</a>
+        </p>  
+    </form>
+    <p id="erro-login" style="color: red;"></p>
+</section>
+{% endblock %}

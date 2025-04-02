@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="container login-container">
+    <h2>Criar Conta</h2>
+    <form id="form-registro">
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required>
+
+        <label for="senha">Senha:</label>
+        <input type="password" name="senha" id="senha" required>
+
+        <button type="submit">Registrar</button>
+    </form>
+    <div id="mensagem" style="margin-top: 10px; font-weight: bold;"></div>
+    <p id="erro-registro" style="color: red;"></p>
+</section>
+{% endblock %}

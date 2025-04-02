@@ -1,0 +1,228 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+}
+
+header, footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+.container {
+    padding: 2rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+form input, form select {
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+button {
+    padding: 0.6rem;
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: #005fa3;
+}
+
+ul#lista-transacoes {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul#lista-transacoes li {
+    background: white;
+    border: 1px solid #ccc;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+}
+
+.grafico-box {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.grafico-box canvas {
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.resumo-box {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    gap: 1rem;
+}
+
+.resumo-item {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    width: 180px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.resumo-item.receitas h3 {
+    color: #2e8b57;
+}
+
+.resumo-item.despesas h3 {
+    color: #b22222;
+}
+
+.resumo-item.saldo h3 {
+    color: #00008b;
+}
+
+.excluir-btn {
+    margin-left: 1rem;
+    background-color: #b22222;
+    color: white;
+    border: none;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.excluir-btn:hover {
+    background-color: #8b0000;
+}
+
+#grafico-evolucao-saldo {
+    max-width: 100%;
+    margin: 1rem auto;
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.editar-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-left: 4px solid #0077cc;
+    border-radius: 6px;
+}
+
+.editar-form input {
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex: 1 1 150px;
+}
+
+.editar-form button {
+    padding: 6px 12px;
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.editar-form button.cancelar-edicao {
+    background-color: #999;
+}
+
+.editar-form button:hover {
+    opacity: 0.9;
+}
+
+/* ... seu CSS existente permanece acima */
+
+/* 🔽 Responsividade para telas menores */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .resumo-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .resumo-item {
+        width: 90%;
+    }
+
+    .grafico-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .editar-form {
+        flex-direction: column;
+    }
+
+    .editar-form input {
+        width: 100%;
+    }
+
+    .editar-form button {
+        width: 100%;
+    }
+
+    ul#lista-transacoes li {
+        font-size: 0.95rem;
+    }
+
+    button {
+        font-size: 0.95rem;
+    }
+
+    .filtro-periodo form {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .resumo-item {
+        padding: 1rem;
+        width: 100%;
+    }
+
+    header, footer {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .login-container {
+        margin: 1rem auto;
+        padding: 1rem;
+    }
+}
+

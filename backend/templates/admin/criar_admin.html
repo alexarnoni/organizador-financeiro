@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="container">
+    <h2>Criar Novo Administrador</h2>
+    <form method="post">
+        <label>Email:</label>
+        <input type="email" name="email" required>
+        <label>Senha:</label>
+        <input type="password" name="senha" required>
+        <label>Confirmar Senha:</label>
+        <input type="password" name="confirmar_senha" required>
+        <button type="submit">Criar Admin</button>
+    </form>
+
+    {% if mensagem %}
+        <p style="color: green;">{{ mensagem }}</p>
+    {% endif %}
+    {% if erro %}
+        <p style="color: red;">{{ erro }}</p>
+    {% endif %}
+</section>
+{% endblock %}

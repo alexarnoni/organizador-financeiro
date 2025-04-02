@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="container">
+    <h2>Painel de Administração</h2>
+    <div style="margin-bottom: 20px;">
+        <a href="/admin/criar-admin">
+            <button style="padding: 0.6rem 1rem; font-size: 1rem;">
+                ➕ Criar Novo Admin
+            </button>
+        </a>
+    </div>
+    <h3>Resumo Geral</h3>
+    <h3>Crescimento de Usuários por Mês</h3>
+    <canvas id="grafico-usuarios" width="600" height="300"></canvas>
+
+    <ul>
+        <li><strong>Total de Usuários:</strong> {{ total_usuarios }}</li>
+        <li><strong>Receitas (todas):</strong> R$ {{ resumo.receitas | round(2) }}</li>
+        <li><strong>Despesas (todas):</strong> R$ {{ resumo.despesas | round(2) }}</li>
+    </ul>
+
+    <h3>Categorias Mais Usadas</h3>
+    <ul>
+        {% for cat in categorias %}
+            <li>{{ cat[0] }}: {{ cat[1] }} transações</li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}

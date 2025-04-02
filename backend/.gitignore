@@ -1,0 +1,55 @@
+# Ambientes virtuais
+venv/
+*/venv/
+
+# Banco de dados SQLite
+*.db
+*.sqlite3
+
+# VS Code
+.vscode/
+
+# Cache Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Logs temporários
+*.log
+
+# Arquivos de ambiente
+.env
+.env.*
+
+# Arquivos de pacotes Python gerados
+pip-wheel-metadata/
+*.egg-info/
+
+# Build frontend (se usar futuramente)
+frontend/dist/
+build/
+
+# Arquivos de testes temporários
+.coverage
+.tox/
+.pytest_cache/
+
+# Dados sensíveis personalizados (ex: tokens futuros)
+config.py
+
+# Alembic
+alembic/versions/
+
+# SQLite local
+*.db
+
+# VS Code e Python
+.vscode/
+__pycache__/
+*.pyc
+.env

@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="container">
+
+    <!-- Formulário de nova transação -->
+    <section class="formulario">
+        <h2>Resumo das Finanças</h2>        
+        <button id="btn-atualizar-resumo" style="margin-bottom: 10px;">🔄 Atualizar Resumo</button>
+        <section id="resumo-financeiro" class="resumo-box">
+            <div class="resumo-item receitas">
+                <h3>Receitas</h3>
+                <p id="resumo-receitas">R$ 0,00</p>
+            </div>
+            <div class="resumo-item despesas">
+                <h3>Despesas</h3>
+                <p id="resumo-despesas">R$ 0,00</p>
+            </div>
+            <div class="resumo-item saldo">
+                <h3>Saldo</h3>
+                <p id="resumo-saldo">R$ 0,00</p>
+            </div>
+        </section>
+        <h2>Nova Transação</h2>
+        <form id="form-transacao">
+            <div class="campo">
+                <label for="tipo">Tipo:</label>
+                <select name="tipo" id="tipo" required>
+                    <option value="receita">Receita</option>
+                    <option value="despesa">Despesa</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="valor">Valor:</label>
+                <input type="number" name="valor" id="valor" step="0.01" required>
+            </div>
+
+            <div class="campo">
+                <label for="categoria">Categoria:</label>
+                <input type="text" name="categoria" id="categoria" required>
+            </div>
+
+            <div class="campo">
+                <label for="descricao">Descrição:</label>
+                <input type="text" name="descricao" id="descricao">
+            </div>
+
+            <div class="campo">
+                <label for="data">Data:</label>
+                <input type="date" name="data" id="data" required>
+            </div>
+
+            <button type="submit">Adicionar</button>
+        </form>
+    </section>
+
+    <!-- Filtro por período -->
+    <section class="filtro-periodo">
+        <h2>Filtrar por Período</h2>
+        <form id="filtro-form">
+            <label for="mes">Mês:</label>
+            <select id="mes" name="mes">
+                <option value="">Todos</option>
+                {% for m in range(1, 13) %}
+                <option value="{{ m }}">{{ m }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="ano">Ano:</label>
+            <input type="number" id="ano" name="ano" min="2000" max="2100" placeholder="Ex: 2025">
+
+            <button type="submit">Aplicar Filtro</button>
+        </form>
+    </section>
+
+    <!-- Gráficos de pizza -->
+    <section class="graficos">
+        <h2>Gráficos</h2>
+        <div class="grafico-box">
+            <canvas id="grafico-receitas" width="400" height="400"></canvas>
+            <canvas id="grafico-despesas" width="400" height="400"></canvas>
+        </div>
+    </section>
+
+    <h2>Evolução do Saldo</h2>
+        <div class="grafico-box">
+            <canvas id="grafico-evolucao-saldo" width="600" height="300"></canvas>
+        </div>
+
+    <!-- Lista de transações -->
+    <section class="lista-transacoes">
+        <h2>Transações</h2>
+        <ul id="lista-transacoes">
+            <!-- Inserido via JS -->
+        </ul>
+    </section>
+
+</section>
+{% endblock %}

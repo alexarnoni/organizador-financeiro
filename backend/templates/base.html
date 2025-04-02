@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Organizador Financeiro</title>
+    <link rel="stylesheet" href="/static/styles/styles.css">
+</head>
+<body>
+    {% include 'shared/header.html' %}
+    <nav style="text-align: right; margin: 1rem;">
+        {% if request.cookies.get('session_id') %}
+            <a href="/logout">Sair</a>
+            <a href="/admin">Painel Admin</a>
+        {% else %}
+            <a href="/login">Entrar</a>
+        {% endif %}
+    </nav>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    {% include 'shared/footer.html' %}
+    <!-- Biblioteca Chart.js primeiro -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Depois seu script -->
+    <script src="/static/js/script.js"></script>
+    {% if request.url.path == '/login' %}
+        <script src="/static/js/login.js"></script>
+    {% endif %}
+    {% if request.url.path == '/registrar' %}
+        <script src="/static/js/registro.js"></script>
+    {% endif %}
+    {% if request.url.path == '/admin' %}
+    <script src="/static/js/admin.js"></script>
+    {% endif %}
+    {% if request.url.path == '/admin/novo-admin' %}
+    <script src="/static/js/criar_admin.js"></script>
+    {% endif %}
+</body>
+</html>
