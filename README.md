@@ -88,12 +88,6 @@ alembic upgrade head
 
 ---
 
-## 📸 Prints (opcional)
-
-> Inclua imagens da interface, gráficos e painel de admin para ilustrar.
-
----
-
 ## 👨‍💻 Autor
 
 **Alexandre Arnoni Nieri de Freitas**  
